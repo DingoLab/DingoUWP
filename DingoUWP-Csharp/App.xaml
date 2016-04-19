@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="DingoUWP_Csharp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DingoUWP_Csharp"
+    RequestedTheme="Light">
+
+</Application>
