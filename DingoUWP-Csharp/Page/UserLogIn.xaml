@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="DingoUWP_Csharp.UserLogIn"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DingoUWP_Csharp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:data="using:DingoUWP_Csharp.Models">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel
+            HorizontalAlignment="Left">
+        </StackPanel>
+        <StackPanel
+            Orientation="Horizontal">
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="120"
+                Height="30"
+                Text="{Binding ElementName=UserName}">
+            </TextBlock>
+            <TextBox
+                Name="UserName"
+                Text="{Binding ElementName,Mode=TwoWay}"
+                KeyDown="UserName_KeyDown">
+            </TextBox>
+        </StackPanel>
+        <Button
+            Name="LogIn"
+            Content="登陆"
+            Click="LogIn_Click"></Button>
+    </Grid>
+</Page>
