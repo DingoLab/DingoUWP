@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DingoUWP_Csharp.Models
 {
-    public class UserInfo:User
+    public class UserInfo:UserBase
     {
         private string _tel;
         public string Tel

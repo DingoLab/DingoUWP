@@ -12,38 +12,20 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using System.ComponentModel;
-using DingoUWP_Csharp.Models;
-using DingoUWP_Csharp.Common;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
-namespace DingoUWP_Csharp
+namespace DingoUWP_Csharp.Pages
 {
     /// <summary>
+    /// 用于填写详细用户信息的页面
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class UserLogIn : Page
+    public sealed partial class Authentication : Page
     {
-        User _user;
-        public UserLogIn()
+        public Authentication()
         {
             this.InitializeComponent();
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            _user = new User();
-            
-        }
-        private void UserName_KeyDown(object sender, KeyRoutedEventArgs e)
-        {
-
-        }
-
-        private void LogIn_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

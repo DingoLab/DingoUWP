@@ -51,7 +51,7 @@ namespace DingoUWP_Csharp.Common
         /// <summary>
         /// 保存当前 <see cref="SessionState"/>。  任何 <see cref="Frame"/> 实例
         /// (已向 <see cref="RegisterFrame"/> 注册)都还将保留其当前的
-        /// 导航堆栈，从而使其活动 <see cref="Page"/> 可以
+        /// 导航堆栈，从而使其活动 <see cref="Pages"/> 可以
         /// 保存其状态。
         /// </summary>
         /// <returns>反映会话状态保存时间的异步任务。</returns>
@@ -92,7 +92,7 @@ namespace DingoUWP_Csharp.Common
         /// <summary>
         /// 还原之前保存的 <see cref="SessionState"/>。  任何 <see cref="Frame"/> 实例
         /// (已向 <see cref="RegisterFrame"/> 注册)都还将还原其先前的导航
-        /// 状态，从而使其活动 <see cref="Page"/> 可以还原其
+        /// 状态，从而使其活动 <see cref="Pages"/> 可以还原其
         /// 状态。
         /// </summary>
         /// <param name="sessionBaseKey">标识会话类型的可选密钥。
