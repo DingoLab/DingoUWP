@@ -1,4 +1,5 @@
 ﻿using DingoUWP_Csharp.Models;
+using DingoUWP_Csharp.Pages;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,8 +27,16 @@ namespace DingoUWP_Csharp
         public MainPage()
         {
             this.InitializeComponent();
-            UserInfo a = new UserInfo();
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
         }
 
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+        }
+        private void to()
+        {
+        }
     }
 }
