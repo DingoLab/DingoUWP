@@ -26,6 +26,8 @@ namespace DingoUWP_Csharp.Pages
     /// </summary>
     public sealed partial class UserLogIn : Page
     {
+        internal Frame rootFrame;
+        private bool IsJump = false;
         private UserBase _userBaseViewModel = UserBaseViewModel.GetUserBase();
         public UserBase userBaseViewModel
         {
@@ -37,6 +39,7 @@ namespace DingoUWP_Csharp.Pages
         public UserLogIn()
         {
             this.InitializeComponent();
+            rootFrame = new Frame();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -54,11 +57,23 @@ namespace DingoUWP_Csharp.Pages
 
         private void LogOn_Click(object sender, RoutedEventArgs e)
         {
+            
             //ApplicationDataContainer data = ApplicationData.Current.LocalSettings;
             //data.Values["statue"] = "visit";
             VerificationCodeTextBlock.Visibility = Visibility.Visible;
             VeriFicationCodeTextBox.Visibility = Visibility.Visible;
             VeriFicationCodeTextBoxButton.Visibility = Visibility.Visible;
+            // Navigate to mainpage
+            if(IsJump)
+            {
+                rootFrame.Navigate(typeof(Authentication));
+                // Place the frame in the current Window
+                Window.Current.Content = rootFrame;
+            }
+            else
+            {
+                IsJump = true;
+            }
         }
     }
 }

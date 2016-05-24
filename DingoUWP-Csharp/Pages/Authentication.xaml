@@ -8,6 +8,118 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical"
+                                    Margin="0,0,0,0">
+                            <TextBlock Text="请选择省份"></TextBlock>
+                            <ComboBox x:Name="provSelect"
+                                  SelectionChanged="provSelect_SelectionChanged">
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical"
+                                    Margin="20,0,0,0">
+                            <TextBlock Text="请选择城市"></TextBlock>
+                            <ComboBox x:Name="citySelect"
+                                  SelectionChanged="citySelect_SelectionChanged">
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical"
+                                    Margin="20,0,0,0">
+                            <TextBlock Text="请选择地区"></TextBlock>
+                            <ComboBox x:Name="areaSelect"
+                                  SelectionChanged="areaSelect_SelectionChanged">
+                            </ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="此处键入您的地区以下的详细地址"
+                                   HorizontalAlignment="Left"></TextBlock>
+                        <TextBox x:Name="OtherAddressInfo"
+                                 Height="80"
+                                 TextWrapping="Wrap"
+                                 AcceptsReturn="True"
+                                 ScrollViewer.VerticalScrollBarVisibility="Visible"></TextBox>
+                        <TextBlock x:Name="FontNumber"
+                                   HorizontalAlignment="Right"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
 
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <Image x:Name="headImage"
+                           Width="100"
+                           Height="100"
+                           Stretch="Uniform"
+                           Source="/Assets/StoreLogo.png"
+                           ></Image>
+                    <Image x:Name="headImageTemp"
+                           Visibility="Collapsed"
+                           Width="100"
+                           Height="100"
+                           Stretch="Uniform"
+                           Source="/Assets/StoreLogo.png"
+                           ></Image>
+                    <Button x:Name="chooseHeadImage"
+                            Content="点此选择头像"
+                            Click="chooseHeadImage_Click"></Button>
+                </StackPanel>
+
+                <StackPanel Width="330" Margin="0,20,0,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="130"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"></RowDefinition>
+                            <RowDefinition Height="100"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="bikeImage1"
+                           Width="100"
+                           Height="100"
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           Stretch="Uniform"
+                           Source="/Assets/StoreLogo.png"
+                           ></Image>
+                        <Image x:Name="bikeImage2"
+                           Width="100"
+                           Height="100"
+                           Grid.Column="1"
+                           Grid.Row="0"
+                           Stretch="Uniform"
+                           Source="/Assets/StoreLogo.png"
+                           ></Image>
+                        <Image x:Name="bikeImage3"
+                           Width="100"
+                           Height="100"
+                           Grid.Column="0"
+                           Grid.Row="1"
+                           Stretch="Uniform"
+                           Source="/Assets/StoreLogo.png"
+                           ></Image>
+                        <Image x:Name="bikeImage4"
+                           Width="100"
+                           Height="100"
+                           Grid.Column="1"
+                           Grid.Row="1"
+                           Stretch="Uniform"
+                           Source="/Assets/StoreLogo.png"
+                           ></Image>
+                        <Button 
+                            x:Name="chooseBikeImage"
+                            Content="选择自行车图片"
+                            Grid.Column="2"
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Click="chooseBicycleImage_Click"></Button>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

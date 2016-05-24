@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Core;
+using DingoUWP_Csharp.Models;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -119,7 +120,7 @@ namespace DingoUWP_Csharp.Pages
         void DismissExtendedSplash()
         {
             // Navigate to mainpage
-            rootFrame.Navigate(typeof(MainPage));
+            rootFrame.Navigate(typeof(UserLogIn));
             // Place the frame in the current Window
             Window.Current.Content = rootFrame;
         }

@@ -31,7 +31,7 @@ namespace DingoUWP_Csharp.Models
         private const string Password_ERROE4 = "密码不得含有空格";
 
         //数据合法性校验使用的正则表达式
-        private const string PhoneNumber_REGEX = @"^((\+86)|(\(\+86\)))?(1\d{2}\d{8})?$";
+        private const string PhoneNumber_REGEX = @"^((\+86)|(（\+86）)|(\(\+86\)))?(1\d{2}\d{8})?$";
 
         //用户ID,唯一（由后端生成）
         public string ID;
