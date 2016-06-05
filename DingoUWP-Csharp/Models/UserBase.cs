@@ -10,14 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace DingoUWP_Csharp.Models
 {
-    /// <summary>
-    /// 用户登录成功时后端返回的临时Token，包含一个字符序列和到期时间
-    /// </summary>
-    public struct TOKEN
-    {
-        string token;
-        DateTime maturity;
-    }
+    
     /// <summary>
     /// 用户登陆基础类型
     /// </summary>

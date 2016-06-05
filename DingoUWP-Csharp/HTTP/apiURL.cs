@@ -14,86 +14,108 @@ namespace DingoUWP_Csharp.HTTP
         /// <summary>
         /// 用户注册
         /// </summary>
-        static string API_UserSignUp = "";
+        public static string API_UserSignUp = "";
+        
         /// <summary>
         /// 用户身份认证
         /// </summary>
-        static string API_Authentication = "";
+        public static string API_Authentication = "";
+        
         /// <summary>
         /// 查询身份认证状态
         /// </summary>
-        static string API_GetAuthenticationStatus = "";
+        public static string API_GetAuthenticationStatus = "";
+        
         /// <summary>
         /// 用户登录
         /// </summary>
-        static string API_UserLogIn = "";
+        public static string API_UserLogIn = "";
+        
         /// <summary>
         /// 用户登出
         /// </summary>
-        static string API_UserLogOut = "";
+        public static string API_UserLogOut = "";
+        
         /// <summary>
         /// 获取用户信息
         /// </summary>
-        static string API_GetUserInfo = "";
+        public static string API_GetUserInfo = "";
+        
         /// <summary>
         /// 获取用户头像
         /// </summary>
-        static string API_GetUserHeadImage = "";
+        public static string API_GetUserHeadImage = "";
+        
         /// <summary>
         /// 修改用户信息
         /// </summary>
-        static string API_ChangeUserInfo = "";
+        public static string API_ChangeUserInfo = "";
+        
         /// <summary>
         /// 修改用户密码
         /// </summary>
-        static string API_ChangeUserPassword = "";
+        public static string API_ChangeUserPassword = "";
+        
         /// <summary>
         /// 修改收货地址
         /// </summary>
-        static string API_ChangeShippingAddress = "";
+        public static string API_ChangeShippingAddress = "";
+        
         /// <summary>
         /// 查询收货地址
         /// </summary>
-        static string API_GetShippingAddress = "";
+        public static string API_GetShippingAddress = "";
+
+        //以下为任务管理部分API
+
         /// <summary>
         /// 任务发布（代收快递）
         /// </summary>
-        static string API_PublishMission = "";
+        public static string API_PublishMission = "";
+        
         /// <summary>
         /// 任务的修改或删除
         /// </summary>
-        static string API_MissionChangeOrDelete = "";
+        public static string API_MissionChangeOrDelete = "";
+        
         /// <summary>
         /// 获取任务（代收快递）
         /// </summary>
-        static string API_GetMission = "";
+        public static string API_GetMission = "";
+        
         /// <summary>
         /// 协商价格
         /// </summary>
-        static string API_NegotiatePrice = "";
+        public static string API_NegotiatePrice = "";
+        
         /// <summary>
         /// 获取任务信息
         /// </summary>
-        static string API_GetMissionInfo = "";
+        public static string API_GetMissionInfo = "";
+        
         /// <summary>
         /// 支付和确认
         /// </summary>
-        static string API_PaymentAndConfirm = "";
+        public static string API_PaymentAndConfirm = "";
+        
         /// <summary>
         /// 可代收状态的修改或添加
         /// </summary>
-        static string API_ChangeOrAddCanInwardCollectionStatus = "";
+        public static string API_ChangeOrAddCanInwardCollectionStatus = "";
+        
         /// <summary>
         /// 可代收状态的删除或完成
         /// </summary>
-        static string API_DeleteOrCompleteCanInwardCollectionStatus = "";
+        public static string API_DeleteOrCompleteCanInwardCollectionStatus = "";
+        
         /// <summary>
         /// 可代收状态查询
         /// </summary>
-        static string API_GetCanInwardCollectionStatus = "";
+        public static string API_GetCanInwardCollectionStatus = "";
+        
         /// <summary>
         /// 消息通告
         /// </summary>
-        static string API_NotifyMessages = "";
+        public static string API_NotifyMessages = "";
     }
 }

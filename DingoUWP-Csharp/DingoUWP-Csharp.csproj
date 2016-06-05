@@ -97,6 +97,7 @@
     <Content Include="Data\Address1.json" />
     <Content Include="Data\Address2.json" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -109,11 +110,14 @@
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="HTTP\apiURL.cs" />
     <Compile Include="HTTP\BaseService.cs" />
+    <Compile Include="HTTP\DataConvert.cs" />
+    <Compile Include="HTTP\UserManagerment.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\UserBase.cs" />
     <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="Models\UserMamagermentModel.cs" />
     <Compile Include="Pages\Authentication.xaml.cs">
       <DependentUpon>Authentication.xaml</DependentUpon>
     </Compile>
