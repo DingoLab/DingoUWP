@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.Security.Cryptography.Core;
+using Windows.Storage.Streams;
+using Windows.Security.Cryptography;
 
 namespace DingoUWP_Csharp.HTTP
 {
@@ -124,6 +127,53 @@ namespace DingoUWP_Csharp.HTTP
             {
                 return null;
             }
+        }
+
+        /// <summary>
+        /// 获取密码散列值
+        /// </summary>
+        /// <param name="Options"></param>
+        /// <param name="plaintext"></param>
+        /// <returns></returns>
+        public static string Encryption(string Options,string plaintext)
+        {
+            string temp = SHA256Encrypt(plaintext);
+            return SHA512Encrypt(Options + temp + GetTimeStamp());
+        }
+        /// <summary>
+        /// 获取明文的SHA256散列值
+        /// </summary>
+        /// <param name="plaintext"></param>
+        /// <returns></returns>
+        public static string SHA256Encrypt(string plaintext)
+        {
+            HashAlgorithmProvider hashalgorithmprovider = HashAlgorithmProvider.OpenAlgorithm(HashAlgorithmNames.Sha256);
+            CryptographicHash cryptographichash = hashalgorithmprovider.CreateHash();
+            cryptographichash.Append(CryptographicBuffer.ConvertStringToBinary(plaintext, BinaryStringEncoding.Utf8));
+            return CryptographicBuffer.EncodeToHexString(cryptographichash.GetValueAndReset());
+        }
+        
+        /// <summary>
+        /// 获取明文的SHA512散列值
+        /// </summary>
+        /// <param name="plaintext"></param>
+        /// <returns></returns>
+        public static string SHA512Encrypt(string plaintext)
+        {
+            HashAlgorithmProvider hashalgorithmprovider = HashAlgorithmProvider.OpenAlgorithm(HashAlgorithmNames.Sha512);
+            CryptographicHash cryptographichash = hashalgorithmprovider.CreateHash();
+            cryptographichash.Append(CryptographicBuffer.ConvertStringToBinary(plaintext, BinaryStringEncoding.Utf8));
+            return CryptographicBuffer.EncodeToHexString(cryptographichash.GetValueAndReset());
+        }
+        
+        /// <summary>
+        /// 获取时间戳
+        /// </summary>
+        /// <returns></returns>
+        public static string GetTimeStamp()
+        {
+            TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return Convert.ToInt64(ts.TotalSeconds).ToString();
         }
     }
 }

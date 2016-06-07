@@ -52,6 +52,7 @@ namespace DingoUWP_Csharp.HTTP
             {
                 string Status, Context_Where;
                 HttpRequestMessage mSent = new HttpRequestMessage(HttpMethod.Post, new Uri(url));
+                mSent.Headers.Add("Accept", "application/json");
                 mSent.Content = new HttpStringContent(body, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json;charset=utf-8");
                 HttpClient client = new HttpClient();
                 HttpResponseMessage response = await client.SendRequestAsync(mSent);
@@ -120,6 +121,7 @@ namespace DingoUWP_Csharp.HTTP
                 {
                     mSent.Headers.Add(headerkey[temp], headvalue[temp]);
                 }
+                mSent.Headers.Add("Accept", "application/json");
                 mSent.Content = new HttpStringContent(body, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json;charset=utf-8");
                 HttpClient client = new HttpClient();
                 HttpResponseMessage response = await client.SendRequestAsync(mSent);
