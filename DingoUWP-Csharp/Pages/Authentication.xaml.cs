@@ -32,8 +32,16 @@ namespace DingoUWP_Csharp.Pages
         JsonArray address0;
         JsonArray address1;
         JsonArray address2;
+        /// <summary>
+        /// 地址选择栏临时标志
+        /// </summary>
+        public static int tempnumber;
+        /// <summary>
+        /// 身份认证界面
+        /// </summary>
         public Authentication()
         {
+            tempnumber = 0;
             this.InitializeComponent();
             //三级地址对象初始化
             address0 = new JsonArray();
@@ -225,6 +233,7 @@ namespace DingoUWP_Csharp.Pages
         /// <param name="e"></param>
         private async void chooseBicycleImage_Click(object sender, RoutedEventArgs e)
         {
+            /*
             var mypicture = Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Pictures);
             var picker = new Windows.Storage.Pickers.FileOpenPicker();
             picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -242,6 +251,20 @@ namespace DingoUWP_Csharp.Pages
                 bikeImageList[temp].Source= headImageTemp.Source;
                 Windows.Storage.StorageFile biketemp = await bikeList[temp].CopyAsync(storageFolder, "bike"+(temp+1).ToString()+".jpg", Windows.Storage.NameCollisionOption.ReplaceExisting);
                 bikeImageList[temp].Source = new BitmapImage(new Uri(biketemp.Path, UriKind.RelativeOrAbsolute));
+            }
+            */
+            if(tempnumber==0)
+            {
+                byte[] bytes =await DataConvert.ImageToBytes(headImage.Source);
+                BitmapImage bit = await DataConvert.BytesToImage(bytes);
+                bikeImage1.Source = bit;
+                tempnumber = 1;
+            }
+            else
+            {
+                byte[] bytes = await DataConvert.ImageToBytes(bikeImage1.Source);
+                BitmapImage bit = await DataConvert.BytesToImage(bytes);
+                bikeImage2.Source = bit;
             }
         }
     }

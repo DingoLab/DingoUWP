@@ -24,6 +24,9 @@ namespace DingoUWP_Csharp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        /// <summary>
+        /// 应用程序主界面
+        /// </summary>
         public MainPage()
         {
             this.InitializeComponent();

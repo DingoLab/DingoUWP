@@ -10,6 +10,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.Security.Cryptography.Core;
 using Windows.Storage.Streams;
 using Windows.Security.Cryptography;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace DingoUWP_Csharp.HTTP
 {
@@ -52,8 +53,17 @@ namespace DingoUWP_Csharp.HTTP
         {
             try
             {
+                /*
                 BitmapImage bitmapimage = new BitmapImage();
                 await bitmapimage.SetSourceAsync(BytesToStream(bytes).AsRandomAccessStream());
+                return bitmapimage;
+                */
+                string filename = Md5Encrypt(StreamToString(BytesToStream(bytes)))+GetTimeStamp();
+                Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalCacheFolder;
+                Windows.Storage.StorageFile file = await storageFolder.CreateFileAsync(filename);
+                await Windows.Storage.FileIO.WriteBytesAsync(file, bytes);
+                BitmapImage bitmapimage = new BitmapImage(new Uri(file.Path));
+                //await bitmapimage.SetSourceAsync(BytesToStream(bytes).AsRandomAccessStream());
                 return bitmapimage;
             }
             catch
@@ -73,6 +83,7 @@ namespace DingoUWP_Csharp.HTTP
             {
                 return null;
             }
+            
             BitmapImage tempimg = (BitmapImage)imagesource;
             try
             {
@@ -88,9 +99,8 @@ namespace DingoUWP_Csharp.HTTP
             {
                 return null;
             }
-            
         }
-        
+
         /// <summary>
         /// bytes转Stream
         /// </summary>
@@ -165,7 +175,19 @@ namespace DingoUWP_Csharp.HTTP
             cryptographichash.Append(CryptographicBuffer.ConvertStringToBinary(plaintext, BinaryStringEncoding.Utf8));
             return CryptographicBuffer.EncodeToHexString(cryptographichash.GetValueAndReset());
         }
-        
+        /// <summary>
+        /// 获取明文的Md5散列值
+        /// </summary>
+        /// <param name="plaintext"></param>
+        /// <returns></returns>
+        public static string Md5Encrypt(string plaintext)
+        {
+            HashAlgorithmProvider hashalgorithmprovider = HashAlgorithmProvider.OpenAlgorithm(HashAlgorithmNames.Md5);
+            CryptographicHash cryptographichash = hashalgorithmprovider.CreateHash();
+            cryptographichash.Append(CryptographicBuffer.ConvertStringToBinary(plaintext, BinaryStringEncoding.Utf8));
+            return CryptographicBuffer.EncodeToHexString(cryptographichash.GetValueAndReset());
+        }
+
         /// <summary>
         /// 获取时间戳
         /// </summary>

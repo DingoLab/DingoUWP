@@ -23,17 +23,23 @@ namespace DingoUWP_Csharp.Models
         //public DateTime Maturity;
     }
 
-    class BaseModel
+    /// <summary>
+    /// 响应基础类型
+    /// </summary>
+    class BaseModelResponse
     {
         public string Status { get; set; }
         public string Context { get; set; }
     }
-    namespace UserMamagermentModel
+    /// <summary>
+    /// 用户管理过程中的响应类型模型
+    /// </summary>
+    namespace UserMamagermentResponse
     {
         /// <summary>
         /// 用户注册
         /// </summary>
-        class UserSignUp:BaseModel
+        class UserSignUp:BaseModelResponse
         {
             public string UID { get; set; }
         }
@@ -41,13 +47,13 @@ namespace DingoUWP_Csharp.Models
         /// <summary>
         /// 请求用户认证
         /// </summary>
-        class UserAuthentication:BaseModel
+        class UserAuthentication:BaseModelResponse
         {}
 
         /// <summary>
         /// 查询用户身份认证状态
         /// </summary>
-        class GetAuthenticationStatus:BaseModel
+        class GetAuthenticationStatus:BaseModelResponse
         {
             public string AuthenticationStatus { get; set; }
         }
@@ -55,7 +61,7 @@ namespace DingoUWP_Csharp.Models
         /// <summary>
         /// 用户登录
         /// </summary>
-        class UserLogIn:BaseModel
+        class UserLogIn:BaseModelResponse
         {
             public TOKEN Token { get; set; }
         }
@@ -63,13 +69,13 @@ namespace DingoUWP_Csharp.Models
         /// <summary>
         /// 用户登出
         /// </summary>
-        class UserLogOut:BaseModel
+        class UserLogOut:BaseModelResponse
         {}
         
         /// <summary>
         /// 获取用户信息
         /// </summary>
-        class GetUserInfo:BaseModel
+        class GetUserInfo:BaseModelResponse
         {
             public string UID { get; set; }
             public string Name { get; set; }
@@ -80,7 +86,7 @@ namespace DingoUWP_Csharp.Models
         /// <summary>
         /// 获取用户头像
         /// </summary>
-        class GetUserHeadImage:BaseModel
+        class GetUserHeadImage:BaseModelResponse
         {
             public BitmapImage HeadImage{ get; set; }
         }
@@ -88,19 +94,19 @@ namespace DingoUWP_Csharp.Models
         /// <summary>
         /// 修改用户信息
         /// </summary>
-        class ChangeUserInfo:BaseModel
+        class ChangeUserInfo:BaseModelResponse
         {}
         
         /// <summary>
         /// 修改用户密码
         /// </summary>
-        class ChangeUserPassword:BaseModel
+        class ChangeUserPassword:BaseModelResponse
         { }
        
         /// <summary>
         /// 收货地址的增删改
         /// </summary>
-        class ChangeShippingAddress:BaseModel
+        class ChangeShippingAddress:BaseModelResponse
         {
             public string AddressNumber { get; set; }
         }
@@ -108,7 +114,7 @@ namespace DingoUWP_Csharp.Models
         /// <summary>
         /// 查询收货地址
         /// </summary>
-        class GetShippingAddress :BaseModel
+        class GetShippingAddress :BaseModelResponse
         {
             public string AddressInfo { get; set; }
         }

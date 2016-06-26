@@ -106,13 +106,21 @@ namespace DingoUWP_Csharp.Pages
         /// 以还原保存的会话状态
         /// </summary>
         /// <param name="loadState"></param>
-        async void RestoreStateAsync(bool loadState)
+        void RestoreStateAsync(bool loadState)
         {
-            if(loadState)
+            if (loadState)
             {
 
             }
         }
+        /*async void RestoreStateAsync(bool loadState)
+        {
+            if (loadState)
+            {
+
+            }
+        }*/
+
 
         /// <summary>
         /// 结束扩展的初始屏幕后导航到MainPage

@@ -110,7 +110,7 @@
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="HTTP\apiURL.cs" />
     <Compile Include="HTTP\BaseService.cs" />
-    <Compile Include="HTTP\DataConvert.cs" />
+    <Compile Include="Data\DataConvert.cs" />
     <Compile Include="HTTP\UserManagerment.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
